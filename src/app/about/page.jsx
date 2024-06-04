@@ -145,8 +145,7 @@ const About = () => {
                       Magzine Developer
                     </div>
                     <span className="italic text-[12px] mb-[5px]">
-                      I was magzine developer in college magzine named as
-                      "MECHON"
+                      I was magzine developer in college magzine named as MECHON
                     </span>
                     <span className="text-orange-400 text-[12px]"></span>
                   </div>

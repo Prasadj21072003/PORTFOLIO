@@ -50,7 +50,10 @@ const Portfolio = () => {
             className=" h-screen flex max-2xl:flex-col items-center gap-[100px] "
           >
             {Projects.map((item, i) => (
-              <div className="h-screen w-screen flex items-center justify-center ">
+              <div
+                key={i}
+                className="h-screen w-screen flex items-center justify-center "
+              >
                 <div
                   className=" w-[330px] h-[400px]    bg-slate-100  hover:text-white hover:bg-indigo-700"
                   key={i}
