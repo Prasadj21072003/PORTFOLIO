@@ -1,6 +1,5 @@
 "use client";
 import {
-  delay,
   easeIn,
   easeInOut,
   motion,
@@ -16,6 +15,8 @@ import Particlesbackground from "@/components/Particlesbackground";
 
 const Portfolio = () => {
   const [hoveron, sethoveron] = useState();
+  const [width, setwidth] = useState(false);
+
   const portfolioref = useRef();
   const hireref = useRef();
   const text = "FULL STACK WEB DEVELOPER";
@@ -25,8 +26,11 @@ const Portfolio = () => {
   const movedown = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
 
   const isrefinview = useInView(hireref);
+  useEffect(() => {
+    setwidth(window.innerWidth);
+  }, []);
 
-  var w = window.innerWidth;
+  //var w = window.innerWidth;
 
   return (
     <motion.div
@@ -44,9 +48,11 @@ const Portfolio = () => {
           My Works
         </motion.div>
 
-        <div className="w-screen p-[0px] max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white">
+        <div
+          className={` w-screen p-[0px] max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
+        >
           <motion.div
-            style={w > 1534 ? { x } : { x: "" }}
+            style={width > 1534 ? { x } : { x: "" }}
             className=" h-screen flex max-2xl:flex-col items-center gap-[100px] "
           >
             {Projects.map((item, i) => (
@@ -60,7 +66,7 @@ const Portfolio = () => {
                   onMouseEnter={() => sethoveron(i)}
                   onMouseLeave={() => sethoveron()}
                 >
-                  <div className="w-full h-[60%]  relative ">
+                  <div className="w-full h-[60%]  relative " key={i}>
                     <Image
                       layout="fill"
                       style={{
@@ -70,11 +76,14 @@ const Portfolio = () => {
                       alt=""
                     />
                   </div>
-                  <div className="w-full h-[40%]  flex flex-col gap-[15px] pt-[15px] px-[15px] relative  ">
+                  <div
+                    className="w-full h-[40%]  flex flex-col gap-[15px] pt-[15px] px-[15px] relative  "
+                    key={i}
+                  >
                     <h1 className="font-semibold text-[24px]">{item?.title}</h1>
-                    {/* <span className=" text-[15px] font-light">{item?.para}</span>*/}
 
                     <Link
+                      key={i}
                       href={item?.href}
                       className="absolute right-[10px] bottom-[10px] p-[10px] rounded-lg  
                     w-[50%] flex items-center justify-center text-white "
