@@ -28,9 +28,7 @@ const Portfolio = () => {
   const isrefinview = useInView(hireref);
   useEffect(() => {
     setwidth(window.innerWidth);
-  }, []);
-
-  //var w = window.innerWidth;
+  }, [window.innerWidth]);
 
   return (
     <motion.div
