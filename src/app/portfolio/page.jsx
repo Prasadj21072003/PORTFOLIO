@@ -67,6 +67,7 @@ const Portfolio = () => {
                         objectFit: "cover",
                       }}
                       src={item?.img}
+                      alt=""
                     />
                   </div>
                   <div className="w-full h-[40%]  flex flex-col gap-[15px] pt-[15px] px-[15px] relative  ">

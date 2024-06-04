@@ -17,7 +17,7 @@ export default function Home() {
       <Particlesbackground />
       <div className="h-[100%] lg:flex sm:px-[32px] px-[16px]  overflow-scroll">
         <div className="h-[50%]  lg:w-[50%] lg:h-full  mb-[10px] relative flex items-center justify-center ">
-          <Image src="/photo4.png" className=" object-contain" fill />
+          <Image src="/photo4.png" className=" object-contain" fill alt="" />
         </div>
         <div className="h-[50%]  lg:w-[50%] sm:h-full flex flex-col  gap-[32px]  lg:justify-center ">
           <h1 className="text-[28px] sm:text-[40px]  lg:text-[60px] lg:leading-[75px] xl:leading-[85px] font-bold w-full  z-50">
