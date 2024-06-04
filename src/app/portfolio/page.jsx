@@ -26,7 +26,7 @@ const Portfolio = () => {
 
   const isrefinview = useInView(hireref);
 
-  //  var w = window.innerWidth;
+  var w = window.innerWidth;
 
   return (
     <motion.div
@@ -46,7 +46,7 @@ const Portfolio = () => {
 
         <div className="w-screen p-[0px] max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white">
           <motion.div
-            // style={w > 1534 ? { x } : { x: "" }}
+            style={w > 1534 ? { x } : { x: "" }}
             className=" h-screen flex max-2xl:flex-col items-center gap-[100px] "
           >
             {Projects.map((item, i) => (
