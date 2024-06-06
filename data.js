@@ -1,5 +1,11 @@
 export const Projects = [
   {
+    img: "/Screenshot(55).png",
+    title: "Netflix clone Website(MERN+JWT)",
+
+    href: "https://netflix-clone-without-adminpanel-frontend.vercel.app/",
+  },
+  {
     img: "/Screenshot(8).png",
     title: "Responsive Shoes Website",
     para: " Tech used is  React and Tailwind css ",
