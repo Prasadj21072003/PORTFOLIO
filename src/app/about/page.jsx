@@ -142,10 +142,10 @@ const About = () => {
                   </div>
                   <div className="flex flex-col gap-[10px]">
                     <div className="bg-white  py-[4px] px-[6px]   text-[15px] font-semibold">
-                      Magzine Developer
+                      Magzine Designer
                     </div>
                     <span className="italic text-[12px] mb-[5px]">
-                      I was magzine developer in college magzine named as MECHON
+                      I was magzine designer in college magzine named as MECHON
                     </span>
                     <span className="text-orange-400 text-[12px]"></span>
                   </div>
