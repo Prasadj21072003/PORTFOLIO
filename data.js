@@ -1,40 +1,40 @@
 export const Projects = [
   {
     img: "/Screenshot(55).png",
-    title: "Netflix clone Website(MERN+JWT)",
+    title: "Non-responsive Netflix clone Website (MERN+JWT)",
 
     href: "https://netflix-clone-without-adminpanel-frontend.vercel.app/",
   },
   {
     img: "/Screenshot(8).png",
-    title: "Responsive Shoes Website",
+    title: "Responsive Shoes Website (NEXTJS+TAILWIND)",
     para: " Tech used is  React and Tailwind css ",
     href: "https://effulgent-bonbon-07f4b5.netlify.app",
   },
   {
     img: "/Screenshot(53).png",
-    title: "E-commerce website (Non-Responsive)",
+    title: "Non-Responsive E-commerce website(REACTJS)",
     para: " Tech used is Reactjs and Scss ",
     href: "https://darling-shortbread-ce9734.netlify.app/",
   },
   {
     img: "/Screenshot(51).png",
-    title: "Car website (Non-Responsive)",
+    title: "Non-Responsive Car website (REACTJS)",
     href: "https://lucky-cuchufli-2dea13.netlify.app",
   },
   {
     img: "/Screenshot(52).png",
-    title: "Property website (Non-Responsive)",
+    title: "Non-Responsive Property website (REACTJS)",
     href: "https://strong-haupia-0bd045.netlify.app",
   },
   {
     img: "/Screenshot(54).png",
-    title: "Adminpanel (Non-Responsive)",
+    title: "Non-Responsive Adminpanel (REACTJS)",
     href: "https://thriving-gumdrop-1b36d7.netlify.app",
   },
   {
     img: "/Screenshot(50).png",
-    title: "Responsive Website Design",
+    title: "Responsive Website Design (REACTJS)",
     para: " Tech used is Reactjs and Tailwind css",
     href: "https://classy-chebakia-f84e67.netlify.app",
   },
