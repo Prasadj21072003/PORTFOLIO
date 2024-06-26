@@ -1,5 +1,11 @@
 export const Projects = [
   {
+    img: "/Screenshot(56).png",
+    title: "Responsive Realtime chat website ",
+
+    href: "https://cozy-kangaroo-90c390.netlify.app/",
+  },
+  {
     img: "/Screenshot(55).png",
     title: "Non-responsive Netflix clone Website ",
 
