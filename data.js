@@ -21,7 +21,7 @@ export const Projects = [
     img: "/Screenshot(53).png",
     title: "Non-Responsive E-commerce website",
     para: " Tech used is Reactjs and Scss ",
-    href: "https://darling-shortbread-ce9734.netlify.app/",
+    href: "https://snazzy-flan-1ceb7a.netlify.app/",
   },
   {
     img: "/Screenshot(51).png",
