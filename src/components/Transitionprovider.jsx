@@ -41,7 +41,7 @@ const Transitionprovider = ({ children }) => {
           <Navbar />
         </div>
         <div
-          className={`h-[calc(100vh-96px)] cursor-[url(../../public/icons8-cursor-35.png),_pointer]`}
+          className={`h-[calc(100vh-96px)] cursor-[url(../../public/icons8-cursor-35.png),_pointer] `}
         >
           {children}
         </div>

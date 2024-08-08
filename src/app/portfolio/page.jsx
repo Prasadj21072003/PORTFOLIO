@@ -31,12 +31,8 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <motion.div
-      className="h-full w-full"
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%", transition: { duration: 1 } }}
-    >
-      <div className="h-[500vh]   relative w-full " ref={portfolioref}>
+    <motion.div className=" w-full ">
+      <div className="h-[500vh]    w-full relative " ref={portfolioref}>
         <Particlesbackground />
 
         <motion.div
@@ -47,11 +43,11 @@ const Portfolio = () => {
         </motion.div>
 
         <div
-          className={` w-screen p-[0px] max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
+          className={` w-screen p-[0px]   max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
         >
           <motion.div
             style={width > 1534 ? { x } : { x: "" }}
-            className=" h-screen flex max-2xl:flex-col items-center gap-[100px] "
+            className=" h-screen flex max-2xl:flex-col  items-center gap-[100px] "
           >
             {Projects.map((item, i) => (
               <div
@@ -98,8 +94,7 @@ const Portfolio = () => {
           </motion.div>
         </div>
       </div>
-
-      <div className="w-full h-screen flex  items-center justify-around max-2xl:mt-[200px]">
+      <div className="w-full h-screen flex  items-center justify-around max-2xl:hidden ">
         <div className="w-full h-[80%] flex flex-col items-center justify-around ">
           <motion.div
             initial={{ scale: 0.2 }}
