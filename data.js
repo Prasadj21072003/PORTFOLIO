@@ -3,7 +3,7 @@ export const Projects = [
     img: "/Screenshot(56).png",
     title: "Responsive Realtime chat website ",
 
-    href: "https://cozy-kangaroo-90c390.netlify.app/",
+    href: "https://mern-stack-chat-app-frontend.vercel.app/login",
   },
   {
     img: "/Screenshot(55).png",
