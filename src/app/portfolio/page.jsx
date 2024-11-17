@@ -31,31 +31,31 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <motion.div className=" w-full ">
-      <div className="h-[500vh]    w-full relative " ref={portfolioref}>
+    <motion.div className=" w-full  ">
+      <div className="h-[500vh]     w-full relative " ref={portfolioref}>
         <Particlesbackground />
 
         <motion.div
           style={{ y: movedown }}
           className="h-[84vh] w-full flex justify-center items-center text-[60px] lg:text-[120px] mb-[35px] z-50"
         >
-          My Works
+          My Projects
         </motion.div>
 
         <div
-          className={` w-screen p-[0px]   max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
+          className={` w-screen p-[0px] 2xl:overflow-x-hidden   max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
         >
           <motion.div
             style={width > 1534 ? { x } : { x: "" }}
-            className=" h-screen flex max-2xl:flex-col  items-center gap-[100px] "
+            className=" h-screen flex max-2xl:flex-col max-2xl:pb-[5rem]  items-center  "
           >
             {Projects.map((item, i) => (
               <div
                 key={i}
-                className="h-screen w-screen flex items-center justify-center "
+                className="h-screen w-screen flex items-center justify-center   py-[5rem]"
               >
                 <div
-                  className=" w-[330px] h-[400px]    bg-slate-100  hover:text-white hover:bg-indigo-700"
+                  className=" w-[330px] h-[400px] max-2xl:border-[2px] max-2xl:border-gray-200   bg-slate-100  hover:text-white hover:bg-indigo-700"
                   key={i}
                   onMouseEnter={() => sethoveron(i)}
                   onMouseLeave={() => sethoveron()}
@@ -94,7 +94,7 @@ const Portfolio = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-full h-screen flex  items-center justify-around max-2xl:hidden ">
+      <div className="w-full h-screen flex  items-center justify-around max-2xl:hidden  ">
         <div className="w-full h-[80%] flex flex-col items-center justify-around ">
           <motion.div
             initial={{ scale: 0.2 }}

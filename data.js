@@ -1,8 +1,12 @@
 export const Projects = [
   {
+    img: "/Screenshot(62).png",
+    title: "Responsive Apple landing page ",
+    href: "https://apple-phone-landing-page-website.onrender.com/",
+  },
+  {
     img: "/Screenshot(56).png",
     title: "Responsive Realtime chat website ",
-
     href: "https://mern-stack-chat-app-frontend.vercel.app/login",
   },
   {

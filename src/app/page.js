@@ -41,7 +41,7 @@ export default function Home() {
             portfolio showcase a diverse collection of projects that reflect my
             commitment to excellence
           </p>
-          <div className="flex w-[280px] justify-between  ">
+          <div className="flex w-[280px] justify-between   max-lg:pb-[2rem] ">
             <Link
               href={"./portfolio"}
               className=" z-50 py-[8px] px-[16px] bg-black ring-1 ring-black rounded text-white  hover:bg-transparent  hover:text-black duration-700 cursor-none "
