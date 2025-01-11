@@ -27,6 +27,7 @@ export default function Home() {
               <span className="w-fit h-fit flex">
                 {firstname.split("").map((l, i) => (
                   <motion.h1
+                    key={`letter-${i}`}
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.2, color: "white" }}
                     className="hover:cursor-none hover:bg-black hover:rounded-full hover:px-[20px]"
@@ -40,6 +41,7 @@ export default function Home() {
               <span className="w-fit h-fit flex">
                 {lastname.split("").map((l, i) => (
                   <motion.h1
+                    key={`letter-${i}`}
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.2, color: "white" }}
                     className="hover:cursor-none hover:bg-black hover:rounded-full hover:px-[20px]"
