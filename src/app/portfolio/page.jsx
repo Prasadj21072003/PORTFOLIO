@@ -10,26 +10,38 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Projects } from "../../../data";
 import Particlesbackground from "@/components/Particlesbackground";
+import StarIcon from "@mui/icons-material/Star";
 
+import axios from "axios";
 const Portfolio = () => {
   const [hoveron, sethoveron] = useState();
+  const [projects, setprojects] = useState();
   const [width, setwidth] = useState(false);
-
   const portfolioref = useRef();
   const hireref = useRef();
   const text = "FULL STACK WEB DEVELOPER";
   const { scrollYProgress } = useScroll({ target: portfolioref });
-
   const x = useTransform(scrollYProgress, [0, 1], ["40%", "-100%"]);
   const movedown = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
-
   const isrefinview = useInView(hireref);
   useEffect(() => {
     setwidth(window.innerWidth);
   }, []);
 
+  useEffect(() => {
+    const fetchingdata = async () => {
+      try {
+        const resp = await axios.get("api/projects");
+        setprojects(resp?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchingdata();
+  }, []);
+
+  let Mytext = `My Projects`;
   return (
     <motion.div className=" w-full  ">
       <div className="h-[500vh]     w-full relative " ref={portfolioref}>
@@ -37,9 +49,32 @@ const Portfolio = () => {
 
         <motion.div
           style={{ y: movedown }}
-          className="h-[84vh] w-full flex justify-center items-center text-[60px] lg:text-[120px] mb-[35px] z-50"
+          className="h-[84vh] w-full flex justify-center items-center text-[50px] lg:text-[120px] xl:text-[140px] mb-[35px] z-50 "
         >
-          My Projects
+          <motion.div
+            initial={{ scale: 0.7 }}
+            whileInView={{ scale: 1.2 }}
+            transition={{ duration: 0.5, delay: 0.7, ease: easeIn }}
+            className="h-fit font-serif overflow-hidden flex  px-[20px]"
+          >
+            {Mytext.split("").map((l, i) => (
+              <motion.h1
+                key={i}
+                initial={{
+                  scale: 1,
+
+                  color: "black",
+                }}
+                whileHover={{
+                  scale: 1.3,
+                  color: "#F57C00",
+                }}
+                className="hover:cursor-none "
+              >
+                {l}
+              </motion.h1>
+            ))}
+          </motion.div>
         </motion.div>
 
         <div
@@ -47,39 +82,46 @@ const Portfolio = () => {
         >
           <motion.div
             style={width > 1534 ? { x } : { x: "" }}
-            className=" h-screen flex max-2xl:flex-col max-2xl:pb-[5rem]  items-center  "
+            className=" h-screen flex max-2xl:flex-col max-2xl:pt-[9rem] max-2xl:pb-[5rem]  items-center  "
           >
-            {Projects.map((item, i) => (
+            {projects?.map((item, i) => (
               <div
-                key={i}
-                className="h-screen w-screen flex items-center justify-center   py-[5rem]"
+                key={item?.href}
+                className="h-screen  w-screen flex items-center justify-center   py-[5rem]"
               >
                 <div
-                  className=" w-[330px] h-[400px] max-2xl:border-[2px] max-2xl:border-gray-200   bg-slate-100  hover:text-white hover:bg-indigo-700"
-                  key={i}
+                  className=" hover:scale-[0.95] transition-all duration-300 ease-in-out  w-[350px] sm:w-[510px] sm:pb-[5px]  max-sm:h-[400px] h-[620px] max-2xl:border-[2px] max-2xl:border-black    bg-slate-100  hover:text-white hover:bg-indigo-700"
                   onMouseEnter={() => sethoveron(i)}
                   onMouseLeave={() => sethoveron()}
                 >
-                  <div className="w-full h-[60%]  relative " key={i}>
+                  <div className="w-full h-[40%] max-sm:h-[60%] relative ">
                     <Image
                       layout="fill"
                       style={{
                         objectFit: "cover",
                       }}
+                      sizes="100vw"
                       src={item?.img}
                       alt=""
                     />
                   </div>
-                  <div
-                    className="w-full h-[40%]  flex flex-col gap-[15px] pt-[15px] px-[15px] relative  "
-                    key={i}
-                  >
-                    <h1 className="font-semibold text-[24px]">{item?.title}</h1>
-
+                  <div className="w-full h-[60%] max-sm:h-[40%]   flex flex-col gap-[5px] pt-[15px] px-[15px] relative  ">
+                    <h1 className="font-semibold text-[24px] mb-[10px]  ">
+                      {item?.title}
+                    </h1>
+                    <div className="w-full border-b max-sm:hidden border-b-gray-400 max-2xl:border-b-black h-[90%] mb-[20px]  flex flex-col ">
+                      <ul className=" pl-[2px] pr-[5px]  text-[1.20rem] flex flex-col gap-[8px]">
+                        {item?.info?.map((i, k) => (
+                          <div className="flex gap-[5px]" key={k}>
+                            <StarIcon className="text-orange-600 relative top-[2px]" />
+                            <li>{i}</li>
+                          </div>
+                        ))}
+                      </ul>
+                    </div>
                     <Link
-                      key={i}
                       href={item?.href}
-                      className="absolute right-[10px] bottom-[10px] p-[10px] rounded-lg  
+                      className="relative max-2xl:border-2  max-2xl:border-black max-sm:absolute max-sm:right-[10px] max-sm:bottom-[10px] ml-auto bottom-[5px] p-[10px] rounded-lg  
                     w-[50%] flex items-center justify-center text-white "
                       style={{
                         backgroundColor: hoveron === i ? "#002379" : "#3949AB",
@@ -101,7 +143,7 @@ const Portfolio = () => {
             // animate={{ scale: 1 }}
             transition={{ duration: 0.5, ease: easeIn }}
             animate={isrefinview ? { scale: 1 } : {}}
-            className="text-center lg:text-[100px]  text-[50px] md:text-[70px]"
+            className="text-center lg:text-[100px] font-serif  text-[50px] md:text-[70px]"
           >
             Do you have a project?
             <motion.div
@@ -130,7 +172,7 @@ const Portfolio = () => {
             <Link
               ref={hireref}
               href={"./contact"}
-              className="w-[150px] h-[150px] flex justify-center items-center text-white bg-black rounded-full text-[20px] "
+              className="w-[150px]  h-[150px] flex justify-center items-center text-white bg-black rounded-full text-[20px] "
             >
               HIRE ME
             </Link>

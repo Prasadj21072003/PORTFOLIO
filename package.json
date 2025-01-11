@@ -10,8 +10,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "axios": "^1.7.9",
     "framer-motion": "^11.1.7",
-    "next": "14.1.4",
+    "ioredis": "^5.4.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.3",
+    "next": "^14.1.4",
     "node": "^21.7.1",
     "punycode": "^2.3.1",
     "react": "^18",

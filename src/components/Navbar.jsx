@@ -89,8 +89,8 @@ const Navbar = () => {
             href={item.href}
             className={` ${
               pathname === item.href
-                ? "bg-black rounded text-white py-[2px] px-[8px]"
-                : ""
+                ? "bg-black rounded text-white py-[2px] px-[8px] cursor-none"
+                : "hover:text-white  hover:scale-[1.09] py-[2px] px-[8px] hover:rounded hover:bg-orange-600 hover:cursor-none transition duration-100 ease-in-out"
             }`}
           >
             {item.title}

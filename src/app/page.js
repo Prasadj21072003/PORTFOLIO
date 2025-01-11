@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeIn, easeOut, motion } from "framer-motion";
 import Link from "next/link";
 import Particlesbackground from "@/components/Particlesbackground";
 
 export default function Home() {
-  const text = "Web Developer";
-
+  const text = "A Web Developer";
+  let firstname = "PRASAD";
+  let lastname = "JADHAV";
   return (
     <motion.div
       className="h-full w-full sm:px-[64px] px-[32px]"
@@ -20,8 +21,35 @@ export default function Home() {
           <Image src="/photo4.png" className=" object-contain" fill alt="" />
         </div>
         <div className="h-[50%]  lg:w-[50%] sm:h-full flex flex-col  gap-[32px]  lg:justify-center ">
-          <h1 className="text-[28px] sm:text-[40px]  lg:text-[60px] lg:leading-[75px] xl:leading-[85px] font-bold w-full  z-50">
-            HI,I AM <span className="  text-orange-700">PRASAD JADHAV</span> A
+          <h1 className="text-[28px] sm:text-[40px] lg:text-[60px] lg:leading-[75px] xl:leading-[85px] font-bold w-full  z-50">
+            HELLO, I AM{" "}
+            <span className="text-orange-700 flex gap-[10px] max-sm:gap-[8px]">
+              <span className="w-fit h-fit flex">
+                {firstname.split("").map((l, i) => (
+                  <motion.h1
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2, color: "white" }}
+                    className="hover:cursor-none hover:bg-black hover:rounded-full hover:px-[20px]"
+                  >
+                    {" "}
+                    {l}
+                  </motion.h1>
+                ))}
+              </span>
+
+              <span className="w-fit h-fit flex">
+                {lastname.split("").map((l, i) => (
+                  <motion.h1
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2, color: "white" }}
+                    className="hover:cursor-none hover:bg-black hover:rounded-full hover:px-[20px]"
+                  >
+                    {" "}
+                    {l}
+                  </motion.h1>
+                ))}
+              </span>
+            </span>{" "}
             <span> </span>
             {text.split("").map((l, i) => (
               <motion.span
