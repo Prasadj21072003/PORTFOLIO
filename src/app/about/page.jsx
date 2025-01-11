@@ -31,6 +31,7 @@ const skilllist = [
   "Rest Api",
   "Socket.io",
   "Redis",
+  "Docker",
   "PostgreSQL",
   "Prisma",
 ];
