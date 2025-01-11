@@ -78,7 +78,7 @@ const Portfolio = () => {
         </motion.div>
 
         <div
-          className={` w-screen p-[0px] 2xl:overflow-x-hidden   max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
+          className={`z-[999] w-screen p-[0px] 2xl:overflow-x-hidden   max-2xl:relative sticky top-[0px]  flex h-screen  items-center gap-[14px]  2xl:bg-gradient-to-r 2xl:from-zinc-900 2xl:to-fuchsia-900  bg-white`}
         >
           <motion.div
             style={width > 1534 ? { x } : { x: "" }}
