@@ -32,7 +32,7 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchingdata = async () => {
       try {
-        const resp = await axios.get("/api/projects");
+        const resp = await axios.get("api/projects");
         setprojects(resp?.data);
       } catch (error) {
         console.log(error);
